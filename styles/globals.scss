@@ -1,0 +1,59 @@
+$primary-color: #000;
+$secondary-color: #fff;
+
+@mixin gutter-mixin {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar-container {
+    @include gutter-mixin;
+    display: flex;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $primary-color;
+}
+
+.btn {
+    text-decoration: none;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+    padding: 15px 10px;
+}
+
+.btn-searchbar {
+    background-color: $secondary-color;
+    font-size: 16px;
+}
+
+.searchbar-container {
+    @include gutter-mixin;
+    border-bottom: 1px solid $primary-color;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        input {
+            height: 50px;
+            width: 78%;
+            padding: 15px;
+            font-size: 16px;
+        }
+    }
+}
+
