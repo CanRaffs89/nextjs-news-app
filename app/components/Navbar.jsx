@@ -3,9 +3,9 @@ import Link from 'next/link'
 
 const Navbar = () => {
   return (
-    <div className='navbar-container'>
+    <div className='navbar-container border-b'>
         <h2>News App</h2>
-        <Link className='btn' href='/'>Link</Link>
+        <Link className='btn border' href='/'>Link</Link>
     </div>
   )
 }

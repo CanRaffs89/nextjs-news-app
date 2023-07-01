@@ -2,7 +2,7 @@ import React from 'react'
 
 const SearchBar = () => {
   return (
-    <div className='searchbar-container'>
+    <div className='searchbar-container border-b'>
         <form>
             <input 
                 type="text"
@@ -10,7 +10,7 @@ const SearchBar = () => {
                 placeholder='Search here...'
                  
             />
-            <button className='btn btn-searchbar' type='submit'>Search</button>
+            <button className='btn btn-searchbar border' type='submit'>Search</button>
         </form>
     </div>
   )

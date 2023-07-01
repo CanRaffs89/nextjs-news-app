@@ -12,6 +12,16 @@ $secondary-color: #fff;
     box-sizing: border-box;
 }
 
+.border {
+    border: 1px solid $primary-color;
+    border-radius: 5px;
+}
+
+.border-b {
+    border-bottom: 1px solid $primary-color;
+}
+
+
 .navbar-container {
     @include gutter-mixin;
     display: flex;
@@ -20,14 +30,11 @@ $secondary-color: #fff;
     padding-bottom: 20px;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid $primary-color;
 }
 
 .btn {
     text-decoration: none;
     color: $primary-color;
-    border: 1px solid $primary-color;
-    border-radius: 5px;
     padding: 15px 10px;
 }
 
@@ -38,7 +45,6 @@ $secondary-color: #fff;
 
 .searchbar-container {
     @include gutter-mixin;
-    border-bottom: 1px solid $primary-color;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
@@ -48,11 +54,42 @@ $secondary-color: #fff;
         align-items: center;
         justify-content: space-between;
 
-        input {
+        .searchbar-field {
             height: 50px;
             width: 78%;
             padding: 15px;
             font-size: 16px;
+        }
+    }
+}
+
+.card-container {
+    margin: 15px;
+    height: auto;
+    
+    .card-image-container {
+        width: 100%;
+        height: 60%;
+        position: relative;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    h4, p {
+        padding: 15px;
+    }
+
+    .card-footer {
+        @include gutter-mixin;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .btn-article {
+            border: none;
+            border-left: 1px solid $primary-color;
+            border-radius: 0px;
+            padding: 15px 10px 15px 20px;
         }
     }
 }
