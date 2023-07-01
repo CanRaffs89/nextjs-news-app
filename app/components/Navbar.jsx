@@ -1,11 +1,13 @@
 import React from 'react'
-import Link from 'next/link'
+import { CiDark } from 'react-icons/ci'
 
 const Navbar = () => {
   return (
     <div className='navbar-container border-b'>
         <h2>News App</h2>
-        <Link className='btn border' href='/'>Link</Link>
+        <button className='btn btn-dark-mode border'>
+          <CiDark/>
+        </button>
     </div>
   )
 }

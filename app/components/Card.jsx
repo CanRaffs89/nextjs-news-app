@@ -10,7 +10,7 @@ const Card = ({ articles }) => {
             <p className='border-b'>{article.description}</p>
             <div className="card-footer">
                 <h4>{article.source.name}</h4>
-                <Link href={article.url} className='btn btn-article'>Link</Link>
+                <Link href={article.url} className='btn-article'>Link</Link>
             </div>
         </div>
         )) }
