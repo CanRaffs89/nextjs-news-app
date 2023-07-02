@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import SearchBar from './components/SearchBar'
 import Card from './components/Card'
 import LoadingPage from './loading'
 
@@ -8,30 +9,29 @@ const HomePage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchArticles = async () => {
-      // Set options
-      const apikey = process.env.NEXT_PUBLIC_API_KEY;
-      const category = 'technology';
-      const url = 'https://gnews.io/api/v4/top-headlines?category=' + category + '&lang=en&country=gb&max=8&apikey=' + apikey;
-
-      // Fetch data 
-      const res = await fetch(url)
-      // Show the loading animation
+    const getArticles = async () => {
+      // Get news articles from API endpoint
+      const response = await fetch('/api/articles');
+      // Wait a bit for the loading animation
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      // Save it in JSON form
-      const data = await res.json();
+      // Save the data as JSON
+      const data = await response.json();
+      // Take just the array of articles from the data
       setArticles(data.articles);
+      // Stop showing the loading animation when timer runs out
       setLoading(false);
     }
-    fetchArticles();
-  },[])
+    getArticles();
+  }, []);
 
+  // This shows the loading animation
   if (loading) {
     return <LoadingPage />;
   }
 
   return (
     <>
+      <SearchBar getSearchResults={(results) => setArticles(results)}/>
       <Card articles={articles}/>
     </>
   )
