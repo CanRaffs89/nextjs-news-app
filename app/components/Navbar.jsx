@@ -4,7 +4,7 @@ import { CiDark } from 'react-icons/ci'
 const Navbar = () => {
   return (
     <div className='navbar-container border-b'>
-        <h2>News App</h2>
+        <h2>Tech Digest</h2>
         <button className='btn btn-dark-mode border'>
           <CiDark/>
         </button>

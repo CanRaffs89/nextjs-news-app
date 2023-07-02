@@ -2,10 +2,11 @@ import '../styles/globals.scss'
 import { roboto, robotoMono } from './utils/font'
 import Navbar from './components/Navbar'
 import SearchBar from './components/SearchBar'
+import Footer from './components/Footer'
 
 export const metadata = {
-  title: 'News App',
-  description: 'A Next JS news app powered by GNews API',
+  title: 'Tech Digest',
+  description: 'A Next JS technology and gaming news app powered by GNews API',
 }
 
 export default function RootLayout({ children }) {
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         <SearchBar/>
         {children}
+        <Footer />
       </body>
     </html>
   )
