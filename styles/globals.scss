@@ -8,6 +8,18 @@ $pink: #ff00e1;
     padding-right: 15px;
 }
 
+// @media (min-width: 760px) {
+//     .card-container {
+//         flex: 1 1 320px;
+//     }
+// }
+
+// @media (min-width: 1040px) {
+//     .card-container {
+//         flex: 1 1 640px;
+//     }
+// }
+
 * {
     margin: 0;
     padding: 0;
@@ -89,40 +101,51 @@ svg {
     }
 }
 
-.card-container {
-    margin: 15px;
-    height: auto;
-    
-    .card-image-container {
-        width: 100%;
-        height: 60%;
-        position: relative;
-        overflow: hidden;
-        object-fit: cover;
-    }
+.card {
+    display: grid;
+    grid-template-columns: auto;
 
-    h4, p {
-        padding: 15px;
-    }
+    .card-container {
+        margin: 15px;
+        height: auto;
 
-    .card-footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .btn-article {
-            border: none;
-            border-left: 1px solid $primary-color;
-            border-radius: 0px;
+        .card-header, p, h4 {
             padding: 15px;
-            text-decoration: none;
-            color: $primary-color;
         }
 
-        .btn-article:hover {
-            text-decoration: underline;
-            background-color: $blue;
+        .card-header {
+            min-height: 100px;
         }
+
+        .card-body {
+            height: 150px;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .btn-article {
+                border: none;
+                border-left: 1px solid $primary-color;
+                border-radius: 0px;
+                padding: 15px;
+                text-decoration: none;
+                color: $primary-color;
+            }
+
+            .btn-article:hover {
+                text-decoration: underline;
+                background-color: $blue;
+            }
+        }
+    }
+}
+
+@media (min-width: 760px) {
+    .card {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

@@ -6,8 +6,8 @@ const Card = ({ articles }) => {
     <div className="card">
         { articles.map((article) => (
         <div key={article.id} className='card-container border'>
-            <h4 className='border-b'>{article.title}</h4>
-            <p className='border-b'>{article.description}</p>
+            <h4 className='card-header border-b'>{article.title}</h4>
+            <p className='card-body border-b'>{article.description}</p>
             <div className="card-footer">
                 <h4>{article.source.name}</h4>
                 <Link href={article.url} className='btn-article'>Link</Link>
