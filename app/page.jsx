@@ -11,9 +11,9 @@ const HomePage = () => {
   useEffect(() => {
     const getArticles = async () => {
       // Get news articles from API endpoint
-      const response = await fetch('/api/articles');
+      const response = await fetch('/api/articles', { next: { revalidate: 60 } });
       // Wait a bit for the loading animation
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       // Save the data as JSON
       const data = await response.json();
       // Take just the array of articles from the data

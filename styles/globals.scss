@@ -1,11 +1,15 @@
-$primary-color: #000;
-$secondary-color: #fff;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$black: #000;
+$white: #fff;
 $blue: #00d5ff;
 $pink: #ff00e1;
 
-@mixin gutter-mixin {
-    padding-left: 15px;
-    padding-right: 15px;
+:root {
+    color: $black;
+    background-color: $white;
 }
 
 * {
@@ -14,36 +18,24 @@ $pink: #ff00e1;
     box-sizing: border-box;
 }
 
-.border {
-    border: 1px solid $primary-color;
-    border-radius: 5px;
+body {
+    color-scheme: light dark;
 }
 
 .border-b {
-    border-bottom: 1px solid $primary-color;
-}
-
-
-.navbar-container, .footer-container {
-    @include gutter-mixin;
-    display: flex;
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    align-items: center;
-    justify-content: space-between;
+    border-bottom: 1px solid $black;
 }
 
 .btn {
     text-decoration: none;
-    color: $primary-color;
+    color: $black;
     padding: 15px 10px;
     background: none;
 }
 
 .btn:hover, .card-container:hover {
     transform: translate(-3px, -3px);
-    box-shadow: 3px 3px 1px $primary-color;
+    box-shadow: 3px 3px 1px $black;
 }
 
 .btn-dark-mode {
@@ -70,7 +62,7 @@ svg {
 }
 
 .searchbar-container {
-    @include gutter-mixin;
+    // @include gutter-mixin;
     padding-top: 20px;
     padding-bottom: 20px;
     width: 100%;
@@ -116,11 +108,11 @@ svg {
 
             .btn-article {
                 border: none;
-                border-left: 1px solid $primary-color;
+                border-left: 1px solid $black;
                 border-radius: 0px;
                 padding: 15px;
                 text-decoration: none;
-                color: $primary-color;
+                color: $black;
             }
 
             .btn-article:hover {
@@ -154,3 +146,52 @@ svg {
     0%,100% { opacity: 0 }
     50% { opacity: 1 }
   }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+        color: $black;
+        background-color: $white;
+    }    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+        color: $white;
+        background-color: $black;
+
+        .border {
+            border: 1px solid $white;
+        }
+        
+        .border-b {
+            border-bottom: 1px solid $white;
+        }
+
+        .btn {
+            color: $white;
+        }
+
+        .btn:hover, .card-container:hover {
+            box-shadow: 3px 3px 1px $white;
+        }
+
+        .btn-dark-mode:hover {
+            background-color: $blue;
+        }
+
+        .btn-searchbar:hover {
+            background-color: $pink;
+        }
+
+        .card {
+            .card-container {
+                .card-footer {
+                    .btn-article {
+                        border-left: 1px solid $white;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

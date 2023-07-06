@@ -17,7 +17,7 @@ const SearchBar = ({ getSearchResults }) => {
   }
 
   return (
-    <div className='searchbar-container border-b'>
+    <div className='px-4 searchbar-container border-b'>
         <form>
             <input 
                 type="text"
@@ -26,7 +26,7 @@ const SearchBar = ({ getSearchResults }) => {
                 value={searchTerm}
                 onChange={(e) => setsearchTerm(e.target.value)}
             />
-            <button onClick={handleSearch} className='btn btn-searchbar border' type='submit'>Search</button>
+            <button onClick={handleSearch} className='border border-black border-solid rounded-md btn btn btn-searchbar' type='submit'>Search</button>
         </form>
     </div>
   )

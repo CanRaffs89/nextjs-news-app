@@ -6,7 +6,7 @@ const Footer = () => {
   }  
 
   return (
-    <div className='footer-container'>
+    <div className='px-4 py-5 flex w-full justify-center items-center'>
         <h4>
             Tech Digest &copy;{getYear()}
         </h4>
