@@ -11,7 +11,7 @@ const HomePage = () => {
   useEffect(() => {
     const getArticles = async () => {
       // Get news articles from API endpoint
-      const response = await fetch('/api/articles');
+      const response = await fetch('/api/articles', { next: { revalidate: 60 }, cache: 'no-store' });
       // Wait a bit for the loading animation
       await new Promise((resolve) => setTimeout(resolve, 500));
       // Save the data as JSON
