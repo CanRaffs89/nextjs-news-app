@@ -5,7 +5,7 @@ export async function fetchArticles() {
   const category = 'technology';
   const url = 'https://gnews.io/api/v4/top-headlines?category=' + category + '&lang=en&country=gb&max=8&apikey=' + apikey;
 
-  const response = await fetch(url);
+  const response = await fetch(url, { next: { revalidate: 60 }, cache: 'no-store' });
   const data = await response.json();
   return data;
 }
